@@ -184,3 +184,49 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         > .\venv3942\Scripts\activate
 
         Hebat! Selanjutnya, mari instal paket Django.
+
+
+#### 1.9 Menginstal Django
+
+        Menginstal Django
+
+        Ada dua cara untuk menginstal paket dengan Python. Anda dapat dengan mudah menjalankan pip install package_name.
+
+        Cara lainnya, Anda dapat menulis nama paket dengan versinya dalam file teks. Saya akan menggunakan yang pertama tetapi jangan ragu untuk menggunakan versi apa pun yang cocok untuk Anda.
+
+        Saya akan memulainya:
+
+        # Memeriksa versi python, pip dan virtualenv
+
+        > python --version
+        > pip --version
+        > virtualenv --vesion
+
+        # Membuat local virtual environment
+
+        > python -m venv venv3942
+
+        # Meng-upgrade pip
+
+        > python -m install pip --upgrade pip
+
+        # Menginstl django versi 4.2
+
+        > venv3942\Scripts\activate
+        > (venv3942) pip install django==4.2
+
+        # Memeriksa hasil instalasi
+
+        > pip list
+
+        Package    Version
+        ---------- -------
+        asgiref    3.6.0
+        Django     4.2
+        pip        23.1.2
+        setuptools 56.0.0
+        sqlparse   0.4.4
+        tzdata     2023.3
+
+        Django versi 4.2 telah berhasil diinstal
+
