@@ -113,3 +113,18 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         • TRACE: Metode TRACE dapat digunakan untuk melacak jalur yang diambil oleh permintaan HTTP ke server dan kemudian ke klien.
 
         • CONNECT: Metode ini seharusnya digunakan untuk meminta penggunaan server sebagai proxy. Bukan semua server harus mengimplementasikannya. Satu manfaat yang menarik adalah sistem RESTful mendukung format data yang berbeda, seperti teks biasa, HTML, YAML, JSON, dan XML. Seperti disebutkan sebelumnya, dalam buku ini, kita akan membuat REST API menggunakan Django dan Django REST
+
+
+#### 1.6. Apa itu Django?
+
+        Apa itu Django?
+
+        Django adalah kerangka web lanjutan yang pertama kali dirilis pada tahun 2005. Ini ditulis dengan Python dan menggunakan pola arsitektur Model-View-Controller (MVC). Pola ini umum didefinisikan sebagai berikut:
+
+        • Model: Sesuai dengan semua logika terkait data. Ini sangat terhubung ke database, seperti itu menyediakan bentuk data tetapi juga metode dan fungsi untuk Buat, Baca, Perbarui, dan Hapus (CRUD) operasi.
+
+        • View: Menangani logika UI aplikasi.
+
+        • Controller: Merupakan lapisan antara model dan tampilan. Sebagian besar waktu, pengemudi menafsirkan permintaan yang masuk dari tampilan, memanipulasi data yang disediakan oleh model komponen, dan berinteraksi dengan tampilan lagi untuk membuat hasil akhir.
+
+        In Django, this will be referred to as the Model-View-Template (MVT) architecture with the template corresponding to the view and the view here represented by the controller.
