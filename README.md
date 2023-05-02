@@ -136,8 +136,51 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
 
         Sebelum mulai bekerja dengan Django, kami harus memastikan Anda memiliki lingkungan yang bagus, apa pun OS nya yang Anda gunakan saat ini.
 
-        Pertama-tama, pastikan Anda menginstal Python versi terbaru. Untuk buku ini, kami akan bekerja dengan Python 3.10.
+        Pertama-tama, pastikan Anda menginstal Python versi terbaru. Untuk buku ini, kami akan bekerja dengan Python 3.9.5.
 
         Jika Anda menggunakan mesin Windows, buka halaman unduhan resmi di https://www.python. org/downloads/ dan unduh versi yang relevan. 
 
         Untuk pengguna Linux, Anda dapat mengunduhnya menggunakan pengelola unduhan paket repositori default.
+
+
+#### 1.8. Creating a virtual environment
+
+        Menciptakan lingkungan virtual
+
+        Sekarang kita telah menginstal Python, kita harus memastikan bahwa kita telah menginstal virtualenv:
+
+        > python3 -m pip install --user virtualenv
+
+        Lihat yang berikut untuk pengguna Windows:
+
+        > py -m pip install --user virtualenv
+
+        Setelah ini selesai, kita sekarang dapat membuat lingkungan virtual – tetapi mengapa?
+
+        Ada dua jenis lingkungan saat mengembangkan dengan Python: lingkungan global dan lingkungan lokal.
+
+        Jika Anda hanya memasukkan permintaan instal pip secara acak di terminal, paket akan diinstal dan dapat diakses secara global: ini berarti diakses di mana saja di mesin Anda. Terkadang Anda ingin menyendiri lingkungan kerja untuk menghindari konflik versi. Misalnya, secara global Anda mungkin bekerja dengan Python 3.5, yang mendukung versi Django 2.x. Namun, untuk proyek ini, Anda ingin menggunakan Python 3.10 dan versi terbaru Django – di sini, 4.0. Membuat lingkungan virtualenv membantu Anda dengan itu.
+
+        Sekarang kita telah menginstal virutalenv, kita dapat membuat dan mengaktifkan lingkungan virtualenv – tetapi sebelum itu, buat sebuah direktori bernama django-api. Kami akan membangun proyek Python di sini.
+
+        Lihat yang berikut untuk Unix atau macOS:
+
+        > python3 -m venv venv3942
+
+        venv3942 dimaksudkan untuk mengetahui bahwa proyek ini menggunakan Python versi 3.10 dan Django 4.2
+
+        Lihat yang berikut untuk Windows:
+
+        > py -m venv venv3942
+
+        Perintah-perintah sebelumnya ini akan membuat direktori venv3942 yang berisi paket-paket Python yang diinstal dan konfigurasi yang diperlukan untuk mengakses paket ini saat lingkungan virtual diaktifkan. Langkah selanjutnya adalah mengaktifkan lingkungan virtual. Ini akan membantu kami menginstal paket yang kami perlukan mulai bekerja.
+
+        Lihat yang berikut untuk Unix atau macOS:
+
+        > source venv3942/bin/activate
+
+        Lihat yang berikut untuk Windows:
+
+        > .\venv3942\Scripts\activate
+
+        Hebat! Selanjutnya, mari instal paket Django.
