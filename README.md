@@ -56,3 +56,24 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         persyaratan sebagai contoh) pastikan bahwa permintaan yang masuk dimungkinkan (memeriksa izin
         seperti apakah pengguna yang membuat permintaan benar-benar seorang admin) dan bahwa data dalam permintaan tersebut valid
         – hanya setelah itu data dapat didaftarkan dengan aman di database.
+
+
+#### 1.3. Responsibilities of backend developers
+
+        Tanggung jawab pengembang backend
+
+        Backend biasanya terbuat dari tiga bagian utama:
+
+        • Server: Mesin atau aplikasi (NGINX) yang menerima permintaan
+        • Aplikasi: Aplikasi yang berjalan di server yang menerima permintaan, memvalidasi permintaan ini, dan mengirimkan respons yang sesuai.
+        • Database: Digunakan untuk menyimpan data
+
+        Dengan demikian, tanggung jawab pemrogram backend dapat dengan mudah melibatkan penulisan API, menulis kode untuk berinteraksi dengan database, membuat modul atau pustaka, juga mengerjakan data dan arsitektur bisnis, dan banyak lagi.
+
+        Mereka juga harus melakukan hal berikut:
+
+        • Berkoordinasi dan berkomunikasi dengan pengembang frontend untuk mentransfer data secara efisien ke sisi klien aplikasi.
+        • Berkolaborasi dengan teknisi jaminan kualitas untuk mengoptimalkan proses sisi server dan juga lulus beberapa pemeriksaan keamanan
+        • Mengoptimalkan aplikasi saat jumlah permintaan atau pengguna juga meningkat
+        • Menganalisis persyaratan proyek dan membuat struktur sederhana untuk menangani bug dan kesalahan.
+        • Mengusulkan solusi yang efisien untuk cloud hosting tetapi juga membangun pipeline CI/CD Arsitektur backend sebenarnya membantu membangun salah satu antarmuka yang paling umum untuk menggunakan data dalam industri perangkat lunak: Application Programming Interface (API). Mari kita pelajari lebih lanjut tentang istilah tersebut.
