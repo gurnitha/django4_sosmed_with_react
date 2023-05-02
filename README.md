@@ -128,3 +128,16 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         • Controller: Merupakan lapisan antara model dan tampilan. Sebagian besar waktu, pengemudi menafsirkan permintaan yang masuk dari tampilan, memanipulasi data yang disediakan oleh model komponen, dan berinteraksi dengan tampilan lagi untuk membuat hasil akhir.
 
         In Django, this will be referred to as the Model-View-Template (MVT) architecture with the template corresponding to the view and the view here represented by the controller.
+
+
+#### 1.7. Menyiapkan lingkungan kerja
+
+        Menyiapkan lingkungan kerja
+
+        Sebelum mulai bekerja dengan Django, kami harus memastikan Anda memiliki lingkungan yang bagus, apa pun OS nya yang Anda gunakan saat ini.
+
+        Pertama-tama, pastikan Anda menginstal Python versi terbaru. Untuk buku ini, kami akan bekerja dengan Python 3.10.
+
+        Jika Anda menggunakan mesin Windows, buka halaman unduhan resmi di https://www.python. org/downloads/ dan unduh versi yang relevan. 
+
+        Untuk pengguna Linux, Anda dapat mengunduhnya menggunakan pengelola unduhan paket repositori default.
