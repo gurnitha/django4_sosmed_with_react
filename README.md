@@ -10,9 +10,8 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
 ## 1. Creating a Django Project
 
 
-#### 1.1. An overview of software development
+#### 1.1. Sekilas tentang pengembangan perangkat lunak
 
-        modified:   README.md
 
         Sekilas tentang pengembangan perangkat lunak
 
@@ -26,7 +25,7 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         • The frontend: Ini merupakan antarmuka yang disediakan untuk pengguna untuk berinteraksi dengan seluruh aplikasi
 
 
-#### 1.2. Understanding backend development
+#### 1.2. Memahami pengembangan backend
 
 
         Memahami pengembangan backend
@@ -58,7 +57,7 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         – hanya setelah itu data dapat didaftarkan dengan aman di database.
 
 
-#### 1.3. Responsibilities of backend developers
+#### 1.3. Tanggung jawab pengembang backend
 
         Tanggung jawab pengembang backend
 
@@ -79,7 +78,7 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         • Mengusulkan solusi yang efisien untuk cloud hosting tetapi juga membangun pipeline CI/CD Arsitektur backend sebenarnya membantu membangun salah satu antarmuka yang paling umum untuk menggunakan data dalam industri perangkat lunak: Application Programming Interface (API). Mari kita pelajari lebih lanjut tentang istilah tersebut.
 
 
-#### 1.4. What is an API?
+#### 1.4. Apa itu API?
 
         Ingatlah bahwa sebagian besar internet didukung oleh Representational State Transfer (REST) atau RESTful API. API menyederhanakan cara pertukaran data antara aplikasi atau mesin.
 
@@ -89,3 +88,28 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         • Antarmuka perangkat lunak (kode pemrograman), yang ditulis sesuai spesifikasi yang mewakilinya. Misalnya, jika sisi klien aplikasi Anda ditulis dalam JavaScript dan sisi server ditulis dalam PHP, Anda harus membuat web API dengan PHP (karena data berasal dari database), yang akan membantu Anda menulis aturan dan rute yang akan digunakan untuk mengakses data.
 
         API Web relatif umum dan ada spesifikasi dan protokol yang berbeda.
+
+
+#### 1.5.Memahami REST API
+
+        Memahami REST API
+
+        REST biasanya merupakan cara yang harus dilakukan ketika pengembang ingin membangun API. REST adalah alternatif sederhana untuk SOAP dan RPC, karena memudahkan penulisan logika untuk mengakses sumber daya; sumber daya di sini diwakili oleh URL unik yang tersedia dengan satu permintaan ke URL ini.
+
+        RESTful API menggunakan permintaan HTTP (atau metode) untuk berinteraksi dengan sumber daya:
+
+        • DAPATKAN: Metode yang paling umum digunakan di API dan situs web. Metode ini digunakan untuk mengambil data dari server pada sumber daya tertentu. Sumber daya ini adalah titik akhir yang mengembalikan objek atau daftar objek di JSON atau XML sebagian besar waktu.
+
+        • POST: Metode POST adalah metode dasar untuk meminta pemrosesan informasi dari server. Permintaan ini seharusnya membawa mekanisme khusus ke server dan menyebabkan komunikasi dengan modul lain, atau bahkan server lain, untuk memproses data tersebut. Karena itu, sangat mungkin bahwa dua permintaan POST yang identik akan menerima yang berbeda atau bahkan secara semantik respon berlawanan. Data yang akan diproses ditentukan dalam isi permintaan. Itu dokumen yang ditunjuk oleh permintaan melalui halaman adalah sumber daya yang harus memproses data dan menghasilkan respon.
+
+        • HEAD: Metode HEAD digunakan untuk menanyakan header respons, tanpa file dikirim kepada Anda segera. Ini berguna, misalnya, jika file besar perlu ditransfer: terima kasih untuk permintaan HEAD, klien dapat diberi tahu tentang ukuran file terlebih dahulu dan baru kemudian memutuskan apakah akan menerima file.
+
+        • PILIHAN: Ini adalah metode diagnostik, yang mengembalikan pesan yang berguna terutama untuk debugging dan sejenisnya. Pesan ini pada dasarnya menunjukkan, secara mengejutkan, metode HTTP mana aktif di web server. Pada kenyataannya, itu jarang digunakan untuk tujuan yang sah akhir-akhir ini, tetapi itu memang memberikan sedikit bantuan kepada penyerang potensial – ini dapat dilihat sebagai jalan pintas untuk menemukan lubang lain.
+
+        • HAPUS dan PUT: Metode ini seharusnya memungkinkan dokumen untuk diunggah (ke file server) atau dihapus tanpa melalui server File Transfer Protocol (FTP) atau sejenisnya. Jelas, ini dapat menyebabkan penggantian file, dan karenanya pelanggaran keamanan yang sangat besar di server. Oleh karena itu, sebagian besar server web memerlukan konfigurasi khusus dengan sumber daya atau dokumen bertanggung jawab untuk memproses permintaan ini. Dokumen yang dirujuk oleh permintaan adalah dokumen untuk diganti (atau dibuat), dan isi dokumen ada di badan permintaan. Secara teori, Parameter URL dan pengidentifikasi fragmen harus dilarang atau diabaikan oleh server. Di dalam praktek, mereka umumnya ditransmisikan ke sumber daya yang bertanggung jawab untuk memproses permintaan tersebut.
+
+        • PATCH: Metode PATCH dari permintaan HTTP menerapkan sebagian perubahan pada sumber daya.
+
+        • TRACE: Metode TRACE dapat digunakan untuk melacak jalur yang diambil oleh permintaan HTTP ke server dan kemudian ke klien.
+
+        • CONNECT: Metode ini seharusnya digunakan untuk meminta penggunaan server sebagai proxy. Bukan semua server harus mengimplementasikannya. Satu manfaat yang menarik adalah sistem RESTful mendukung format data yang berbeda, seperti teks biasa, HTML, YAML, JSON, dan XML. Seperti disebutkan sebelumnya, dalam buku ini, kita akan membuat REST API menggunakan Django dan Django REST
