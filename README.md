@@ -5,3 +5,6 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
 
 
 ## 0. Setup - Create Github Repository
+
+
+## 1. Creating a Django Project
