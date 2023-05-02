@@ -77,3 +77,15 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         • Mengoptimalkan aplikasi saat jumlah permintaan atau pengguna juga meningkat
         • Menganalisis persyaratan proyek dan membuat struktur sederhana untuk menangani bug dan kesalahan.
         • Mengusulkan solusi yang efisien untuk cloud hosting tetapi juga membangun pipeline CI/CD Arsitektur backend sebenarnya membantu membangun salah satu antarmuka yang paling umum untuk menggunakan data dalam industri perangkat lunak: Application Programming Interface (API). Mari kita pelajari lebih lanjut tentang istilah tersebut.
+
+
+#### 1.4. What is an API?
+
+        Ingatlah bahwa sebagian besar internet didukung oleh Representational State Transfer (REST) atau RESTful API. API menyederhanakan cara pertukaran data antara aplikasi atau mesin.
+
+        Ini terutama terdiri dari dua komponen:
+
+        • Spesifikasi teknis yang menjelaskan tentang opsi pertukaran data antara para pihak, dengan spesifikasi yang dibuat dalam bentuk permintaan protokol pengiriman data dan pemrosesan data
+        • Antarmuka perangkat lunak (kode pemrograman), yang ditulis sesuai spesifikasi yang mewakilinya. Misalnya, jika sisi klien aplikasi Anda ditulis dalam JavaScript dan sisi server ditulis dalam PHP, Anda harus membuat web API dengan PHP (karena data berasal dari database), yang akan membantu Anda menulis aturan dan rute yang akan digunakan untuk mengakses data.
+
+        API Web relatif umum dan ada spesifikasi dan protokol yang berbeda.
