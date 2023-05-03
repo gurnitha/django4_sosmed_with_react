@@ -333,3 +333,14 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         new file:   CoreRoot/urls.py
         new file:   CoreRoot/wsgi.py
         modified:   README.md
+
+
+#### 1.11. Mengkonfigurasi basis data
+
+        Mengkonfigurasi basis data
+
+        Django, secara default, menggunakan sqlite3 sebagai basis data, yang merupakan pustaka dalam proses (in-process library) yang mengimplementasikan mesin basis data SQL mandiri, tanpa konfigurasi, tanpa server, dan transaksional cepat. Ini sangat kompak dan mudah digunakan dan diatur. Ini ideal jika Anda ingin menyimpan data dengan cepat atau untuk pengujian. Namun, ia datang dengan beberapa kelemahan.
+
+        Pertama-tama, tidak ada kemampuan multi-pengguna, yang berarti ia hadir dengan kurangnya kontrol akses granular dan beberapa kemampuan keamanan. Ini karena fakta bahwa SQLite membaca dan menulis langsung ke file disk biasa.
+
+        Misalnya, dalam proyek kita, setelah menjalankan migrasi, Anda akan melihat pembuatan file baru, db.sqlite3. Nah, ini database kita sebenarnya. Kita akan menggantinya dengan SMDB yang lebih kuat bernama Postgres.
