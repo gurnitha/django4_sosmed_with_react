@@ -344,3 +344,78 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
         Pertama-tama, tidak ada kemampuan multi-pengguna, yang berarti ia hadir dengan kurangnya kontrol akses granular dan beberapa kemampuan keamanan. Ini karena fakta bahwa SQLite membaca dan menulis langsung ke file disk biasa.
 
         Misalnya, dalam proyek kita, setelah menjalankan migrasi, Anda akan melihat pembuatan file baru, db.sqlite3. Nah, ini database kita sebenarnya. Kita akan menggantinya dengan SMDB yang lebih kuat bernama Postgres.
+
+
+#### 1.12. Konfigurasi postgres
+
+        Konfigurasi postgres
+
+        PostgreSQL adalah salah satu sistem manajemen basis data sumber terbuka kelas perusahaan tercanggih di dunia. Ia dikembangkan dan dikelola oleh grup pengembangan global PostgreSQL. PostgreSQL adalah sistem database SQL objek-relasional yang kuat dan sangat dapat diperluas. PostgreSQL hadir dengan fitur menarik seperti berikut:
+
+        • User-defined types atau jenis yang ditentukan pengguna
+        • Table inheritance atau tabel pewarisan
+        • Asynchronous replication atau replikasi asinkron
+        • Multi-user capabilities atau kemampuan multi-pengguna
+
+        Ini adalah fitur yang akan Anda cari dalam database, terutama saat bekerja di lingkungan pengembangan atau produksi.
+
+        Menurut OS Anda, Anda dapat mengunduh versi Postgres di https://www.postgresql.org/download/. Dalam buku ini, kita bekerja dengan PostgreSQL 14.
+
+        Setelah selesai, kita akan menginstal adaptor atau driver PostgreSQL untuk Python, psycopg:
+
+        > pip install psycopg2-binary
+
+        Jika Anda menggunakan requirements.txt, jangan lupa untuk menambahkan ini ke file requirements.txt:
+
+        django==4.0
+        psycopg2_binary==2.9.2
+
+        Hebat – sekarang kita telah menginstal adaptor atau driver, mari kita cepat membuat database yang akan kita gunakan untuk proyek ini.
+
+        Untuk itu, kita perlu terhubung sebagai pengguna Postgres di terminal dan kemudian mengakses terminal psql. Di terminal itu, kita bisa memasukkan perintah SQL.
+
+        Untuk pengguna Linux, Anda dapat masuk sebagai berikut:
+
+        > sudo su postgres
+
+        Kemudian, masukkan psql.
+
+        Hebat – mari buat database:
+
+        > CREATE DATABASE django4_sosmed_with_react;
+
+        Untuk terhubung ke database, kita membutuhkan USER dengan kata sandi:
+
+        > CREATE USER supercore WITH PASSWORD 'supercorepassword';
+
+        Itu selalu merupakan kebiasaan yang baik untuk menggunakan kata sandi yang kuat. Anda dapat membuat kata sandi yang kuat di https://passwordsgenerator.net/ – dan langkah selanjutnya adalah memberikan akses ke database kita kepada pengguna baru:
+
+        > GRANT ALL PRIVILEGES ON DATABASE django4_sosmed_with_react TO supercore;
+
+        Kita hampir selesai. kita juga perlu memastikan pengguna ini dapat membuat database. Ini akan sangat membantu ketika kita dapat menjalankan tes. Untuk menjalankan pengujian, Django akan mengonfigurasi lingkungan penuh tetapi juga akan menggunakan basis data:
+
+        > ALTER USER supercore CREATEDB;
+
+        Dengan itu, kita selesai dengan pembuatan database. Mari hubungkan database ini ke proyek Django kita.
+
+        Lihatlah saya telah mencobanya dengan sukses di OS Windows 10:
+
+        Server [localhost]:
+        Database [postgres]:
+        Port [5432]:
+        Username [postgres]:
+        Password for user postgres:
+        psql (15.1)
+        WARNING: Console code page (437) differs from Windows code page (1252)
+          8-bit characters might not work correctly. See psql reference
+          page "Notes for Windows users" for details.
+        Type "help" for help.
+
+        postgres=# CREATE DATABASE django4_sosmed_with_react;
+        CREATE DATABASE
+        postgres=# CREATE USER supercore WITH PASSWORD 'supercorepassword';
+        CREATE ROLE
+        postgres=# GRANT ALL PRIVILEGES ON DATABASE django4_sosmed_with_react TO supercore;
+        GRANT
+        postgres=# ALTER USER supercore CREATEDB;
+        ALTER ROLE
