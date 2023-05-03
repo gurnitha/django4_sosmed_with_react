@@ -230,3 +230,106 @@ Membuat Aplikasi Sosmed Menggunakan Django 4 dan React 18
 
         Django versi 4.2 telah berhasil diinstal
 
+
+#### 1.10. Membuat proyek sampel
+
+        Membuat proyek sampel
+
+        Untuk membuat proyek baru, kita akan menggunakan perintah django-admin. Itu datang dengan opsi yang bisa kita gunakan untuk membuat proyek di Django:
+
+        > django-admin memulai proyek CoreRoot .
+
+        Jangan lupa untuk menambahkan . titik di akhir perintah ini. Ini benar-benar akan menghasilkan semua file di direktori saat ini alih-alih membuat direktori lain untuk memasukkan semua file.
+
+        Anda harus memiliki struktur file seperti ini:
+        .
+        ├── CoreRoot
+        │   ├── __init__.py
+        │   ├── asgi.py
+        │   ├── settings.py
+        │   ├── urls.py
+        │   └── wsgi.py
+        ├── README.md
+        └── manage.py
+
+        Sebelum memulai server, mari jalankan migrasi:
+
+        > python manage.py makemigrations
+        > python manage.py migrate
+
+        Anda akan memiliki keluaran yang serupa:
+
+        Operations to perform:
+          Apply all migrations: admin, auth, contenttypes, sessions
+        Running migrations:
+          Applying contenttypes.0001_initial... OK
+          Applying auth.0001_initial... OK
+          Applying admin.0001_initial... OK
+          Applying admin.0002_logentry_remove_auto_add... OK
+          Applying admin.0003_logentry_add_action_flag_choices... OK
+          Applying contenttypes.0002_remove_content_type_name... OK
+          Applying auth.0002_alter_permission_name_max_length... OK
+          Applying auth.0003_alter_user_email_max_length... OK
+          Applying auth.0004_alter_user_username_opts... OK
+          Applying auth.0005_alter_user_last_login_null... OK
+          Applying auth.0006_require_contenttypes_0002... OK
+          Applying auth.0007_alter_validators_add_error_messages... OK
+          Applying auth.0008_alter_user_username_max_length... OK
+          Applying auth.0009_alter_user_last_name_max_length... OK
+          Applying auth.0010_alter_group_name_max_length... OK
+          Applying auth.0011_update_proxy_permissions... OK
+          Applying auth.0012_alter_user_first_name_max_length... OK
+          Applying sessions.0001_initial... OK
+
+        Migrasi hanyalah cara untuk menyebarkan perubahan yang dilakukan pada model dalam skema database. Karena Django juga hadir dengan beberapa model (seperti model Pengguna yang dapat Anda gunakan untuk autentikasi), kita perlu menerapkan migrasi ini. Saat kita menulis model kita sendiri, kita juga akan membuat file migrasi dan memigrasikannya. Django memiliki object-relational mapping (ORM) yang secara otomatis menangani interaksi dengan basis data untuk Anda.
+
+        Mempelajari SQL dan menulis kueri Anda sendiri cukup sulit dan menuntut saat Anda baru mengenalnya. Butuh waktu lama dan cukup merepotkan. Untungnya, Django menyediakan sistem untuk mengambil manfaat dari database SQL tanpa harus menulis bahkan kueri SQL tunggal!
+
+        Jenis sistem ini disebut ORM. Di balik nama yang terdengar agak biadab ini menyembunyikan operasi yang sederhana dan sangat berguna. Saat Anda membuat model di aplikasi Django Anda, kerangka kerja akan secara otomatis membuat tabel yang sesuai di basis data yang akan menyimpan data yang berkaitan dengan model.
+
+        Tidak perlu menulis perintah SQL di sini – kita hanya akan menulis kode dengan Python yang akan langsung diterjemahkan ke dalam SQL. python manage.py migrate kemudian akan menerapkan perubahan ini ke database.
+
+        Sekarang, jalankan python manage.py runserver. Anda akan melihat keluaran yang serupa, dan server Anda juga akan berjalan di https://localhost:8000.
+
+        Tekan saja URL https://localhost:8000 di browser Anda dan Anda akan melihat sesuatu yang laur biasa: default landing page dari Django.
+
+        Jika Anda melihathanya pada browser Anda, maka Anda telah berhasil.
+
+        Selamat!
+
+        Mari kita bahas contoh proyek yang telah berhasil kita buat.
+
+        Hebat – kita baru saja menginstal Django dan memulai server Django. Mari kita bicara tentang struktur proyek.
+
+        Di bagian terakhir, kita telah membahas secara singkat tentang cara membuat lingkungan virtualenv dengan Python. kita juga telah membuat proyek Django dan menjalankannya.
+
+        Mari kita bicara dengan cepat tentang proyek ini.
+
+        Anda mungkin memperhatikan beberapa berkas dan direktori di direktori django-api. Baiklah, mari kita bicarakan ini dengan cepat:
+
+        • manage.py: Ini adalah utilitas yang disediakan oleh Django untuk berbagai kebutuhan. Ini akan membantu Anda membuat proyek dan aplikasi, menjalankan migrasi, memulai server, dan seterusnya.
+        • CoreRoot: Ini adalah nama proyek yang telah kita buat dengan perintah django-admin. Ini berisi file-file seperti berikut:
+
+          • urls.py: Ini berisi semua URL yang akan digunakan untuk mengakses sumber daya dalam proyek:
+
+            from django.contrib import admin
+            from django.urls import path
+            urlpatterns = [
+                  path('admin/', admin.site.urls),
+            ]
+
+          • wsgi.py: File ini pada dasarnya digunakan untuk penyebaran tetapi juga sebagai pengembangan default lingkungan di Django.
+          • asgi.py: Django juga mendukung menjalankan kode asinkron sebagai aplikasi ASGI.
+          • settings.py: Ini berisi semua pengaturan untuk proyek Django Anda. kamu dapat menemukan SECRET_KEY, daftar INSTALLED_APPS, ALLOWED_HOST, dan seterusnya.
+
+          Sekarang anda familiar dengan struktur proyek Django. Selanjutnya mari kita lihat bagaimana mengkonfigurasi proyek untuk terhubung ke database.
+
+        File baru:
+
+        modified:   .gitignore
+        new file:   CoreRoot/__init__.py
+        new file:   CoreRoot/asgi.py
+        new file:   CoreRoot/settings.py
+        new file:   CoreRoot/urls.py
+        new file:   CoreRoot/wsgi.py
+        modified:   README.md
